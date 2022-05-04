@@ -83,5 +83,29 @@ class RestaurantTest {
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
+    // Part3-TDD Approach
+    @Test
+    public void when_the_item_list_is_not_empty_the_order_value_is_positive(){
+        List<String> orderItems = new ArrayList<String>();
+        orderItems.add("Sweet corn soup");
+        assertTrue(restaurant.calculateOrderCost(orderItems) > 0);
+    }
+
+    @Test
+    public  void when_the_order_list_is_empty_the_order_cost_is_zero(){
+        List<String> orderItems = new ArrayList<String>();
+        assertEquals(restaurant.calculateOrderCost(orderItems) , 0);
+    }
+
+    @Test
+    public void for_the_default_restaurant_the_order_value_is_388(){
+        List<String> orderItems = new ArrayList<String>();
+        orderItems.add("Sweet corn soup");
+        orderItems.add("Vegetable lasagne");
+        assertEquals(restaurant.calculateOrderCost(orderItems) , 388);
+    }
+
+
+
 
 }
