@@ -69,6 +69,22 @@ public class Restaurant {
     }
 
 
+    // Part-3 - TDD Function
+    public int calculateOrderCost(List<String> itemNames){
+        int orderCost = 0;
+        for (String itemName: itemNames){
+            for (Item item : this.menu){
+                if(item.getName().equals(itemName)){
+                    orderCost += item.getPrice();
+                }
+            }
+
+        }
+        return  orderCost;
+    }
+
+
+
 
 
 }
